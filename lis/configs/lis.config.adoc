@@ -8960,7 +8960,7 @@ of how to specify a time interval.
 file format (default = netcdf).
 
 `Noah-MP.5.0 parameter table:` specifies the filename of the
-Noah-MP.5.0 parameter table (all parameters in one new table file)
+Noah-MP.5.0 parameter table (all parameters in one new table file).
 
 `Noah-MP.5.0 number of soil layers:` specifies the number of soil layers
 for Noah-MP.5.0 soil moisture/temperature.
@@ -8983,7 +8983,7 @@ the latitude-direction of spatial resolution.
 `Noah-MP.5.0 dynamic vegetation option:` specifies the dynamic vegetation
 model option for Noah-MP.5.0 LSM.  Options generally recommended for use
 by the model developers are indicated with [**]. See Sect.3.3 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95). 
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95). 
 Options not yet supported in the LIS implementation are indicated with [NS].  
 Acceptable values are:
 
@@ -9041,7 +9041,7 @@ canopy stomatal resistance option must be selected for the following config.
 
 `Noah-MP.5.0 canopy stomatal resistance option:` specifies the canopy
 stomatal resistance option for Noah-MP.5.0 LSM.  See Sect.3.6.11 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95). Options generally
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95). Options generally
 recommended for use by the model developers are indicated with [**].
 Acceptable values are:
 
@@ -9055,7 +9055,7 @@ Acceptable values are:
 `Noah-MP.5.0 soil moisture factor for stomatal resistance:`
 specifies the soil moisture factor for stomatal resistance option
 for Noah-MP.5.0 LSM. See Sect.3.6.8 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95).
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95).
 Options generally recommended for use by the
 model developers are indicated with [**].  Acceptable values are:
 
@@ -9069,7 +9069,7 @@ model developers are indicated with [**].  Acceptable values are:
 
 `Noah-MP.5.0 surface runoff option:` specifies the surface runoff
 option for Noah-MP.5.0 LSM. See Sect.3.7.8 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95).
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95).
  Options generally recommended
 for use by the model developers are indicated with [**].  Options not yet
 supported in the LIS implementation are indicated with [NS].  Acceptable
@@ -9091,7 +9091,7 @@ values are:
 `Noah-MP.5.0 subsurface runoff and groundwater option:` specifies the subsurface runoff
 and groundwater option for Noah-MP.5.0 LSM. Currently only the same surface and subsurface
 runoff options are well tested and recommended. See Sect.3.7.8 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95). Options generally recommended
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95). Options generally recommended
 for use by the model developers are indicated with [**].  Options not yet
 supported in the LIS implementation are indicated with [NS].  Acceptable
 values are:
@@ -9112,7 +9112,7 @@ values are:
 `Noah-MP.5.0 dynamic VIC infiltration option:` specifies the dynamic
 Variable Infiltration Capacity (VIC) infiltration option for Noah-MP.5.0 LSM.
 Currently only works when surface and subsurface runoff option=8. See Sect.3.7.8 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95).
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95).
 Options generally recommended for use by the model developers are indicated with [**].
 Acceptable values are:
 
@@ -9126,7 +9126,7 @@ Acceptable values are:
 
 `Noah-MP.5.0 surface layer drag coefficient option:` specifies the
 surface layer drag coefficient option for Noah-MP.5.0 LSM. See Sect.3.6.13 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95). Options
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95). Options
 generally recommended for use by the model developers are indicated
 with [**].  Acceptable values are:
 
@@ -9139,7 +9139,7 @@ with [**].  Acceptable values are:
 
 `Noah-MP.5.0 supercooled liquid water option:` specifies the supercooled
 liquid water option for Noah-MP.5.0 LSM. See Sect.3.6.19 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95). 
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95). 
 Options generally recommended for use by the model developers are 
 indicated with [**].  Acceptable values are:
 
@@ -9152,7 +9152,7 @@ indicated with [**].  Acceptable values are:
 
 `Noah-MP.5.0 frozen soil permeability option:` specifies the frozen soil
 permeability option for Noah-MP.5.0 LSM. See Sect.3.7.4 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95). Options generally recommended
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95). Options generally recommended
 for use by the model developers are indicated with [**].  Acceptable values
 are:
 
@@ -9165,7 +9165,7 @@ are:
 
 `Noah-MP.5.0 canopy radiation transfer option:` specifies the canopy radiation
 transfer option for Noah-MP.5.0 LSM. See 3.6.5 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95). Options generally recommended
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95). Options generally recommended
 for use by the model developers are indicated with [**].  Acceptable
 values are:
 
@@ -9179,7 +9179,7 @@ values are:
 
 `Noah-MP.5.0 snow surface albedo option:` specifies the snow surface
 albedo option for Noah-MP.5.0 LSM. See Sect.3.6.5 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95). Options generally recommended
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95). Options generally recommended
 for use by the model developers are indicated with [**].  Acceptable
 values are:
 
@@ -9190,9 +9190,9 @@ values are:
 | 2    |      | CLASS
 |====
 
-`Noah-MP.5.0 rainfall & snowfall option:` specifies the option for
+`Noah-MP.5.0 rain-snow partition option:` specifies the option for
 partitioning precipitation into rainfall and snowfall for Noah-MP.5.0
-LSM. See Sect.3.1 in Noah-MPv5 technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95).
+LSM. See Sect.3.1 in Noah-MPv5 technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95).
  Options generally recommended for use by the model developers are
 indicated with [**].  Options not yet supported in the LIS implementation
 are indicated with [NS].  Acceptable values are:
@@ -9209,7 +9209,7 @@ are indicated with [NS].  Acceptable values are:
 
 `Noah-MP.5.0 snow thermal conductivity option:` specifies the option for
 snow thermal conductivity for Noah-MP.5.0 LSM. See Sect.3.6.4 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95).
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95).
 Options generally recommended for use by the model developers are
 indicated with [**]. Acceptable values are:
 
@@ -9225,7 +9225,7 @@ indicated with [**]. Acceptable values are:
 
 `Noah-MP.5.0 lower boundary of soil temperature option:` specifies
 the lower boundary condition of soil temperature option for Noah-MP.5.0
-LSM. See Sect.3.6.17 in Noah-MPv5 technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95).
+LSM. See Sect.3.6.17 in Noah-MPv5 technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95).
  Options generally recommended for use by the model developers are
 indicated with [**].  Acceptable values are:
 
@@ -9238,7 +9238,7 @@ indicated with [**].  Acceptable values are:
 
 `Noah-MP.5.0 snow&soil temperature time scheme option:` specifies
 the snow and soil temperature time scheme for Noah-MP.5.0 LSM.
-See Sect. 3.6.17 in Noah-MPv5 technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95).
+See Sect. 3.6.17 in Noah-MPv5 technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95).
 Options generally recommended for use by the model developers are
 indicated with [**].  Acceptable values are:
 
@@ -9252,7 +9252,7 @@ indicated with [**].  Acceptable values are:
 
 `Noah-MP.5.0 glacier ice option:` specifies the glacier ice phase change
 treatment option for Noah-MP.5.0 LSM. See Sect.4.4 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95).
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95).
  Options generally recommended for use by
 the model developers are indicated with [**].  Acceptable values
 are:
@@ -9266,7 +9266,7 @@ are:
 
 `Noah-MP.5.0 surface resistance option:` specifies the surface
 resistance option for Noah-MP.5.0 LSM.  See Sect.3.6.9 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95).
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95).
 Options generally recommended for use by the model developers 
 are indicated with [**].  Acceptable values are:
 
@@ -9307,7 +9307,7 @@ Acceptable values are:
 
 `Noah-MP.5.0 crop model option:` specifies the crop model option
 for Noah-MP.5.0 LSM. See Sect.3.8.2 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95).
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95).
  Options generally recommended for use by the
 model developers are indicated with [**].  Options not yet supported
 in the LIS implementation are indicated with [NS].  Accepted values
@@ -9322,7 +9322,7 @@ are:
 
 `Noah-MP.5.0 irrigation trigger option:` specifies the irrigation trigger option
 for Noah-MP.5.0 LSM. See Sect.3.7.6 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95).
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95).
 Options generally recommended for use by the
 model developers are indicated with [**].  There must be irrigation fraction
 in the lis.input file. Options not yet supported
@@ -9340,7 +9340,7 @@ are:
 
 `Noah-MP.5.0 irrigation method option:` specifies the irrigation method option
 for Noah-MP.5.0 LSM. See Sect.3.7.6 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95).
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95).
  Options generally recommended for use by the
 model developers are indicated with [**].  This only works when the irrigation trigger
 option is activated. Options not yet supported
@@ -9357,7 +9357,7 @@ in the LIS implementation are indicated with [NS].  Accepted values are:
 
 `Noah-MP.5.0 tile drainage option:` specifies the tile drainage option
 for Noah-MP.5.0 LSM. See Sect.3.7.8 in Noah-MPv5
-technote (He et al. 2023: http://dx.doi.org/10.5065/ew8g-yr95).
+technote (He et al. 2023: https://doi.org/10.5065/ew8g-yr95).
  Options generally recommended for use by the
 model developers are indicated with [**].  There must be tile drainage fraction
 in the lis.input file. Options not yet supported
