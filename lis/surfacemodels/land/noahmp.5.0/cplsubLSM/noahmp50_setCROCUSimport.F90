@@ -37,6 +37,8 @@ subroutine noahmp50_setCROCUSimport(n, SubLSM2LSM_State)
   integer            :: t
   integer            :: status
 
+  external :: noahmp50_snow_update
+
   call ESMF_StateGet(SubLSM2LSM_State,"Total SWE",sweField,rc=status)
   call LIS_verify(status)
   call ESMF_StateGet(SubLSM2LSM_State,"Total snowdepth",snwdField,rc=status)
