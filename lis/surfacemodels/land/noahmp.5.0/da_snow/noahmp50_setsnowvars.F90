@@ -42,7 +42,9 @@ subroutine noahmp50_setsnowvars(n, LSM_State)
   real                   :: dsneqv,dsnowh
   integer                :: t
   integer                :: status
-  
+
+  external :: noahmp50_snow_update
+
   call ESMF_StateGet(LSM_State,"SWE",sweField,rc=status)
   call LIS_verify(status)
   call ESMF_StateGet(LSM_State,"Snowdepth",snodField,rc=status)
