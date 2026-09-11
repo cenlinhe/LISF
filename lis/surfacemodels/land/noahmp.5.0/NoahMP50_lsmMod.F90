@@ -277,6 +277,8 @@ contains
         integer  :: n, t     
         character*3 :: fnest ! EMK for RHMin
 
+        external :: NoahMP50_readcrd
+
         ! allocate memory for nest 
         allocate(Noahmp50_struc(LIS_rc%nnest))
  
