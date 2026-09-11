@@ -37,6 +37,8 @@ subroutine noahmp50_setSnowModelimport(n, SubLSM2LSM_State)
   integer            :: t
   integer            :: status
 
+  external :: noahmp50_snow_update
+
   call ESMF_StateGet(SubLSM2LSM_State,"Total SWE",sweField,rc=status)
   call LIS_verify(status,"noahmp50_setSnowModelimport: error in swe state get from SnowModel")
   call ESMF_StateGet(SubLSM2LSM_State,"Total snowdepth",snwdField,rc=status)
