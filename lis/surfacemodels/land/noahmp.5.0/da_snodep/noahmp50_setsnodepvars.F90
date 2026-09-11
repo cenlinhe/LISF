@@ -46,6 +46,8 @@ subroutine noahmp50_setsnodepvars(n, LSM_State)
   integer                :: ncount(LIS_rc%ngrid(n))
   integer                :: tid, gid
 
+  external :: noahmp50_snodep_update
+
   call ESMF_StateGet(LSM_State,"SWE",sweField,rc=status)
   call LIS_verify(status)
   call ESMF_StateGet(LSM_State,"Snowdepth",snodField,rc=status)
