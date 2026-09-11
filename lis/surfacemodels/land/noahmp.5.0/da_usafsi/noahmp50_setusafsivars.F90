@@ -45,7 +45,9 @@ subroutine noahmp50_setusafsivars(n, LSM_State)
   integer                :: status
   integer                :: ncount(LIS_rc%ngrid(n))
   integer                :: tid, gid
-  
+
+  external :: noahmp50_usafsi_update
+
   call ESMF_StateGet(LSM_State,"SWE",sweField,rc=status)
   call LIS_verify(status)
   call ESMF_StateGet(LSM_State,"Snowdepth",snodField,rc=status)
