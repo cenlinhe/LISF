@@ -64,6 +64,8 @@ subroutine NoahMP50_main(n)
     character*3 :: fnest
     REAL, PARAMETER:: LVH2O = 2.501000E+6 ! Latent heat for evapo for water  
 
+    external :: noahmp_driver_50
+
     ! --------------------------------
 
     ! check NoahMP50 alarm. If alarm is ring, run model.
