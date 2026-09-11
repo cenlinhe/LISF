@@ -71,6 +71,8 @@ subroutine noahmp50_settws(n, LSM_State)
   logical                :: update_flag(LIS_rc%ngrid(n))
   logical                :: rc1,rc2,rc3,rc4,rc5
   
+  external :: noahmp50_tws_reorderEnsForOutliers
+  external :: noahmp50_snow_update
   
   call ESMF_StateGet(LSM_State,"Soil Moisture Layer 1",sm1Field,rc=status)
   call LIS_verify(status,&
