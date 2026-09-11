@@ -1,9 +1,9 @@
 !-----------------------BEGIN NOTICE -- DO NOT EDIT-----------------------
 ! NASA Goddard Space Flight Center
 ! Land Information System Framework (LISF)
-! Version 7.5
+! Version 7.8
 !
-! Copyright (c) 2024 United States Government as represented by the
+! Copyright (c) 2026 United States Government as represented by the
 ! Administrator of the National Aeronautics and Space Administration.
 ! All Rights Reserved.
 !-------------------------END NOTICE -- DO NOT EDIT-----------------------
@@ -343,6 +343,8 @@ module NoahMP401_module
 !     veg 2m exchange coefficient. unit: -
 !   \item[chb2]
 !     bare 2m exchange coefficient. unit: -
+!   \item[wtrflx]
+!    total water flux. unit: kg m-2 s-1
 !   \end{description}
 !
 ! !REVISION HISTORY:
@@ -517,6 +519,9 @@ module NoahMP401_module
 	real               :: sfcheadrt
 	real               :: infxs1rt
 	real               :: soldrain1rt
+#ifdef PARFLOW
+        real, pointer      :: wtrflx(:)
+#endif
  
     end type noahmp401dec
 

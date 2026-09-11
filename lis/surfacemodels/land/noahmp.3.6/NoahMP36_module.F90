@@ -1,9 +1,9 @@
 !-----------------------BEGIN NOTICE -- DO NOT EDIT-----------------------
 ! NASA Goddard Space Flight Center
 ! Land Information System Framework (LISF)
-! Version 7.5
+! Version 7.8
 !
-! Copyright (c) 2024 United States Government as represented by the
+! Copyright (c) 2026 United States Government as represented by the
 ! Administrator of the National Aeronautics and Space Administration.
 ! All Rights Reserved.
 !-------------------------END NOTICE -- DO NOT EDIT-----------------------
@@ -440,6 +440,8 @@ module NoahMP36_module
 !     wood to non-wood ratio
 !   \item[MRP]
 !     microbial respiration parameter. unit: umol co2 /kg c/ s
+!   \item[wtrflx]
+!    total water flux. unit: kg m-2 s-1
 !   \end{description}
 !
 ! !REVISION HISTORY:
@@ -679,6 +681,9 @@ module NoahMP36_module
      ! used for constraints on calibratable parameters for OPTUE ! SY
      !-------------------------------------------------------------------------
      real               :: smcdry ! SY: Not used by NoahMP3.6 from REDPRM, but read in from table
+#ifdef PARFLOW
+     real, pointer      :: wtrflx(:)
+#endif
 
   end type noahmp36dec
 end module NoahMP36_module

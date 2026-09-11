@@ -1,9 +1,9 @@
 !-----------------------BEGIN NOTICE -- DO NOT EDIT-----------------------
 ! NASA Goddard Space Flight Center
 ! Land Information System Framework (LISF)
-! Version 7.5
+! Version 7.8
 !
-! Copyright (c) 2024 United States Government as represented by the
+! Copyright (c) 2026 United States Government as represented by the
 ! Administrator of the National Aeronautics and Space Administration.
 ! All Rights Reserved.
 !-------------------------END NOTICE -- DO NOT EDIT-----------------------
@@ -93,6 +93,8 @@ module noah33_module
 !   \item[relsmc]
 !    Volumetric relative soil moisture $(m^3/m^3)$
 !    (smc - smcwlt) / (porosity - smcwlt)
+!   \item[wtrflx]
+!    total water flux. unit: kg m-2 s-1
 !   \end{description}
 !
 ! !REVISION HISTORY:
@@ -245,6 +247,9 @@ module noah33_module
      real :: sfhead1rt
      real :: infxs1rt
      real :: soldrain1rt
+#endif
+#ifdef PARFLOW
+     real,allocatable :: wtrflx(:)
 #endif
   end type noah33dec
 

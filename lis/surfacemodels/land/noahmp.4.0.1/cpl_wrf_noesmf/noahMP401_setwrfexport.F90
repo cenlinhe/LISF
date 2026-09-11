@@ -1,9 +1,9 @@
 !-----------------------BEGIN NOTICE -- DO NOT EDIT-----------------------
 ! NASA Goddard Space Flight Center
 ! Land Information System Framework (LISF)
-! Version 7.5
+! Version 7.8
 !
-! Copyright (c) 2024 United States Government as represented by the
+! Copyright (c) 2026 United States Government as represented by the
 ! Administrator of the National Aeronautics and Space Administration.
 ! All Rights Reserved.
 !-------------------------END NOTICE -- DO NOT EDIT-----------------------
@@ -119,6 +119,25 @@ subroutine noahMP401_setwrfexport(n)
      temp(i) = NOAHMP401_struc(n)%noahmp401(i)%sh2o(4)
   enddo
   call LIS_patch2tile(n,LIS_rc%lsm_index,LISWRF_export(n)%sh2o4_t,temp)
+#ifdef PARFLOW
+  do i=1,LIS_rc%npatch(n,LIS_rc%lsm_index)
+     temp(i) = NOAHMP401_struc(n)%noahmp401(i)%wtrflx(1)
+  enddo
+  call LIS_patch2tile(n,LIS_rc%lsm_index,LISWRF_export(n)%wtrflx1_t,temp)
+  do i=1,LIS_rc%npatch(n,LIS_rc%lsm_index)
+     temp(i) = NOAHMP401_struc(n)%noahmp401(i)%wtrflx(2)
+  enddo
+  call LIS_patch2tile(n,LIS_rc%lsm_index,LISWRF_export(n)%wtrflx2_t,temp)
+  do i=1,LIS_rc%npatch(n,LIS_rc%lsm_index)
+     temp(i) = NOAHMP401_struc(n)%noahmp401(i)%wtrflx(3)
+  enddo
+  call LIS_patch2tile(n,LIS_rc%lsm_index,LISWRF_export(n)%wtrflx3_t,temp)
+  do i=1,LIS_rc%npatch(n,LIS_rc%lsm_index)
+     temp(i) = NOAHMP401_struc(n)%noahmp401(i)%wtrflx(4)
+  enddo
+  call LIS_patch2tile(n,LIS_rc%lsm_index,LISWRF_export(n)%wtrflx4_t,temp)
+#endif
+
   deallocate(temp)
 
 end subroutine noahMP401_setwrfexport

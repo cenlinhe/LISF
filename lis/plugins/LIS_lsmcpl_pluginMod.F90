@@ -1,9 +1,9 @@
 !-----------------------BEGIN NOTICE -- DO NOT EDIT-----------------------
 ! NASA Goddard Space Flight Center
 ! Land Information System Framework (LISF)
-! Version 7.5
+! Version 7.8
 !
-! Copyright (c) 2024 United States Government as represented by the
+! Copyright (c) 2026 United States Government as represented by the
 ! Administrator of the National Aeronautics and Space Administration.
 ! All Rights Reserved.
 !-------------------------END NOTICE -- DO NOT EDIT-----------------------
@@ -220,6 +220,9 @@ subroutine LIS_lsmcpl_plugin
     call registerlsmcplsetexport(trim(LIS_noah33Id)//"+"//&
                                  trim(LIS_retroId)//char(0), &
                                  noah33_setwrfexport)
+    call registerlsmcplsetexport(trim(LIS_noah33Id)//"+"//&
+                                 trim(LIS_smootherDAId)//char(0), &
+                                 noah33_setwrfexport)
 #endif
 
 #if ( defined SM_NOAHMP_3_6 )
@@ -232,6 +235,9 @@ subroutine LIS_lsmcpl_plugin
     call registerlsmcplsetexport(trim(LIS_noahmp36Id)//"+"//&
                                  trim(LIS_retroId)//char(0), &
                                  noahMP36_setwrfexport)
+    call registerlsmcplsetexport(trim(LIS_noahmp36Id)//"+"//&
+                                 trim(LIS_smootherDAId)//char(0), &
+                                 noahMP36_setwrfexport)
 #endif
 
 #if ( defined SM_NOAHMP_4_0_1 )
@@ -243,6 +249,9 @@ subroutine LIS_lsmcpl_plugin
                                  noahMP401_setwrfexport)
     call registerlsmcplsetexport(trim(LIS_noahmp401Id)//"+"//&
                                  trim(LIS_retroId)//char(0), &
+                                 noahMP401_setwrfexport)
+    call registerlsmcplsetexport(trim(LIS_noahmp401Id)//"+"//&
+                                 trim(LIS_smootherDAId)//char(0), &
                                  noahMP401_setwrfexport)
 #endif
 

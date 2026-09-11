@@ -1,9 +1,9 @@
 !-----------------------BEGIN NOTICE -- DO NOT EDIT-----------------------
 ! NASA Goddard Space Flight Center
 ! Land Information System Framework (LISF)
-! Version 7.5
+! Version 7.8
 !
-! Copyright (c) 2024 United States Government as represented by the
+! Copyright (c) 2026 United States Government as represented by the
 ! Administrator of the National Aeronautics and Space Administration.
 ! All Rights Reserved.
 !-------------------------END NOTICE -- DO NOT EDIT-----------------------
@@ -277,6 +277,9 @@ contains
                 allocate(NOAHMP401_struc(n)%noahmp401(t)%snowliq(NOAHMP401_struc(n)%nsnow))
                 allocate(NOAHMP401_struc(n)%noahmp401(t)%smoiseq(NOAHMP401_struc(n)%nsoil))
                 allocate(NOAHMP401_struc(n)%noahmp401(t)%gecros_state(60))
+#ifdef PARFLOW
+                allocate(NOAHMP401_struc(n)%noahmp401(t)%wtrflx(NOAHMP401_struc(n)%nsoil))
+#endif
             enddo
 
             ! initialize forcing variables to zeros
@@ -295,6 +298,9 @@ contains
                 NOAHMP401_struc(n)%noahmp401(t)%rivsto = 0.0
                 NOAHMP401_struc(n)%noahmp401(t)%fldsto = 0.0
                 NOAHMP401_struc(n)%noahmp401(t)%fldfrc = 0.0
+#ifdef PARFLOW
+                NOAHMP401_struc(n)%noahmp401(t)%wtrflx = 0.0
+#endif
             enddo ! end of tile (t) loop
 
             !------------------------------------------------------------------------

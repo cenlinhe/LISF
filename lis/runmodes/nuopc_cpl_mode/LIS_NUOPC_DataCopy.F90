@@ -1,9 +1,9 @@
 !-----------------------BEGIN NOTICE -- DO NOT EDIT-----------------------
 ! NASA Goddard Space Flight Center
 ! Land Information System Framework (LISF)
-! Version 7.5
+! Version 7.8
 !
-! Copyright (c) 2024 United States Government as represented by the
+! Copyright (c) 2026 United States Government as represented by the
 ! Administrator of the National Aeronautics and Space Administration.
 ! All Rights Reserved.
 !-------------------------END NOTICE -- DO NOT EDIT-----------------------
@@ -2678,6 +2678,7 @@ contains
           do tile=1,LIS_rc%ntiles(nest)
             col = LIS_domain(nest)%tile(tile)%col
             row = LIS_domain(nest)%tile(tile)%row
+            ens = LIS_domain(nest)%tile(tile)%ensem
             if (farray(col,row,ens) .ne. real(MISSINGVALUE,ESMF_KIND_FIELD)) then
               NoahMP36_struc(nest)%noahmp36(tile)%sh2o(3) = farray(col,row,ens)
             endif
@@ -2817,6 +2818,7 @@ contains
           do tile=1,LIS_rc%ntiles(nest)
             col = LIS_domain(nest)%tile(tile)%col
             row = LIS_domain(nest)%tile(tile)%row
+            ens = LIS_domain(nest)%tile(tile)%ensem
             NoahMP36_struc(nest)%noahmp36(tile)%sh2o(3) = farray(col,row,ens)
           enddo
         case ('liquid_fraction_of_soil_moisture_layer_4')

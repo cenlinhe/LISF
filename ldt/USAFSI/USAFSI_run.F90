@@ -1,9 +1,9 @@
 !-----------------------BEGIN NOTICE -- DO NOT EDIT-----------------------
 ! NASA Goddard Space Flight Center
 ! Land Information System Framework (LISF)
-! Version 7.5
+! Version 7.8
 !
-! Copyright (c) 2024 United States Government as represented by the
+! Copyright (c) 2026 United States Government as represented by the
 ! Administrator of the National Aeronautics and Space Administration.
 ! All Rights Reserved.
 !-------------------------END NOTICE -- DO NOT EDIT-----------------------
@@ -368,11 +368,12 @@ subroutine USAFSI_run(n)
         end if
 
         ! RETRIEVE FRACTIONAL SNOW DATA.
-        if (usafsi_settings%usefrac) then
-           write (LDT_logunit,*) &
-                '[INFO] CALLING GETFRAC TO GET FRACTIONAL SNOW DATA'
-           call getfrac (date10, fracdir)
-        end if
+        usafsi_settings%usefrac = .false.  ! YY: no longer in use
+        !if (usafsi_settings%usefrac) then
+        !   write (LDT_logunit,*) &
+        !        '[INFO] CALLING GETFRAC TO GET FRACTIONAL SNOW DATA'
+        !   call getfrac (date10, fracdir)
+        !end if
 
         ! RETRIEVE SURFACE OBSERVATIONS.
         write (LDT_logunit,*) &

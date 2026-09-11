@@ -1,9 +1,9 @@
 !-----------------------BEGIN NOTICE -- DO NOT EDIT-----------------------
 ! NASA Goddard Space Flight Center
 ! Land Information System Framework (LISF)
-! Version 7.5
+! Version 7.8
 !
-! Copyright (c) 2024 United States Government as represented by the
+! Copyright (c) 2026 United States Government as represented by the
 ! Administrator of the National Aeronautics and Space Administration.
 ! All Rights Reserved.
 !-------------------------END NOTICE -- DO NOT EDIT-----------------------
@@ -115,6 +115,12 @@ module LISWRFGridCompMod
          allocate(LISWRF_export(n)%infxsrt(LIS_rc%lnc(n),LIS_rc%lnr(n)))
          allocate(LISWRF_export(n)%soldrain(LIS_rc%lnc(n),LIS_rc%lnr(n)))
 #endif
+#ifdef PARFLOW
+         allocate(LISWRF_export(n)%wtrflx1(LIS_rc%lnc(n),LIS_rc%lnr(n)))
+         allocate(LISWRF_export(n)%wtrflx2(LIS_rc%lnc(n),LIS_rc%lnr(n)))
+         allocate(LISWRF_export(n)%wtrflx3(LIS_rc%lnc(n),LIS_rc%lnr(n)))
+         allocate(LISWRF_export(n)%wtrflx4(LIS_rc%lnc(n),LIS_rc%lnr(n)))
+#endif
 
 !Export states
          allocate(LISWRF_export(n)%avgsurft_t(LIS_rc%ntiles(n)))
@@ -159,6 +165,12 @@ module LISWRFGridCompMod
 #ifdef WRF_HYDRO
          allocate(LISWRF_export(n)%infxsrt_t(LIS_rc%ntiles(n)))
          allocate(LISWRF_export(n)%soldrain_t(LIS_rc%ntiles(n)))
+#endif
+#ifdef PARFLOW
+         allocate(LISWRF_export(n)%wtrflx1_t(LIS_rc%ntiles(n)))
+         allocate(LISWRF_export(n)%wtrflx2_t(LIS_rc%ntiles(n)))
+         allocate(LISWRF_export(n)%wtrflx3_t(LIS_rc%ntiles(n)))
+         allocate(LISWRF_export(n)%wtrflx4_t(LIS_rc%ntiles(n)))
 #endif
       enddo
     end subroutine LISWRF_alloc_states
@@ -236,6 +248,12 @@ module LISWRFGridCompMod
          LISWRF_export(n)%infxsrt = LIS_rc%udef
          LISWRF_export(n)%soldrain = LIS_rc%udef
 #endif
+#ifdef PARFLOW
+         LISWRF_export(n)%wtrflx1 = LIS_rc%udef
+         LISWRF_export(n)%wtrflx2 = LIS_rc%udef
+         LISWRF_export(n)%wtrflx3 = LIS_rc%udef
+         LISWRF_export(n)%wtrflx4 = LIS_rc%udef
+#endif
 
 !Export states
          LISWRF_export(n)%avgsurft_t = LIS_rc%udef
@@ -280,6 +298,12 @@ module LISWRFGridCompMod
 #ifdef WRF_HYDRO
          LISWRF_export(n)%infxsrt_t = LIS_rc%udef
          LISWRF_export(n)%soldrain_t = LIS_rc%udef
+#endif
+#ifdef PARFLOW
+         LISWRF_export(n)%wtrflx1_t = LIS_rc%udef
+         LISWRF_export(n)%wtrflx2_t = LIS_rc%udef
+         LISWRF_export(n)%wtrflx3_t = LIS_rc%udef
+         LISWRF_export(n)%wtrflx4_t = LIS_rc%udef
 #endif
       enddo
     end subroutine LISWRF_reset_states

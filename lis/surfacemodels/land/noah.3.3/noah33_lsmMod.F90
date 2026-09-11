@@ -1,9 +1,9 @@
 !-----------------------BEGIN NOTICE -- DO NOT EDIT-----------------------
 ! NASA Goddard Space Flight Center
 ! Land Information System Framework (LISF)
-! Version 7.5
+! Version 7.8
 !
-! Copyright (c) 2024 United States Government as represented by the
+! Copyright (c) 2026 United States Government as represented by the
 ! Administrator of the National Aeronautics and Space Administration.
 ! All Rights Reserved.
 !-------------------------END NOTICE -- DO NOT EDIT-----------------------
@@ -201,6 +201,9 @@ contains
           allocate(noah33_struc(n)%noah(i)%smc(noah33_struc(n)%nslay))
           allocate(noah33_struc(n)%noah(i)%sh2o(noah33_struc(n)%nslay))
           allocate(noah33_struc(n)%noah(i)%relsmc(noah33_struc(n)%nslay))
+#ifdef PARFLOW
+          allocate(noah33_struc(n)%noah(i)%wtrflx(noah33_struc(n)%nslay))
+#endif
        enddo
        noah33_struc(n)%forc_count = 0 
        do i=1,LIS_rc%npatch(n,LIS_rc%lsm_index)
@@ -228,6 +231,9 @@ contains
           noah33_struc(n)%noah(i)%sfhead1rt = 0
           noah33_struc(n)%noah(i)%infxs1rt = 0
           noah33_struc(n)%noah(i)%soldrain1rt = 0
+#endif
+#if PARFLOW
+          noah33_struc(n)%noah(i)%wtrflx = LIS_rc%udef
 #endif
           
        enddo

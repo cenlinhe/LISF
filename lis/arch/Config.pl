@@ -3,9 +3,9 @@
 #-----------------------BEGIN NOTICE -- DO NOT EDIT-----------------------
 # NASA Goddard Space Flight Center
 # Land Information System Framework (LISF)
-# Version 7.5
+# Version 7.8
 #
-# Copyright (c) 2024 United States Government as represented by the
+# Copyright (c) 2026 United States Government as represented by the
 # Administrator of the National Aeronautics and Space Administration.
 # All Rights Reserved.
 #-------------------------END NOTICE -- DO NOT EDIT-----------------------
@@ -148,28 +148,28 @@ if($opt_lev eq ""){
 }
 
 if($opt_lev == -3) {
-   # Default flags for C.
-   $sys_c_opt = "-g";
-   if($sys_arch eq "linux_ifc"){
-       $sys_opt = "-g -warn";
-       $sys_opt .= 
-	   " -check bounds,format,output_conversion,pointers,stack,uninit";
-       $sys_opt .= " -fp-stack-check -ftrapuv";
+    $sys_opt   = "-g -O0";    # Default flags for Fortran
+    $sys_c_opt = "-g -O0";    # Default flags for C
+    if($sys_arch eq "linux_ifc"){
+        # Fortran flags
+        $sys_opt = "-g -O0 -warn";
+        $sys_opt .=
+            " -check bounds,format,output_conversion,pointers,stack,";
+        $sys_opt .= "uninit";
+        $sys_opt .= " -fp-stack-check -ftrapuv";
 
-       $sys_c_opt = "-g -Wall -Wcast-qual -Wcheck -Wdeprecated";
-       $sys_c_opt .= " -Wextra-tokens -Wformat";
-       $sys_c_opt .= " -Wformat-security -Wmissing-declarations";
-       $sys_c_opt .= " -Wmissing-prototypes -Wpointer-arith -Wremarks";
-       $sys_c_opt .= " -Wreturn-type -Wshadow -Wsign-compare";
-       $sys_c_opt .= " -Wstrict-prototypes -Wtrigraphs -Wuninitialized";
-       $sys_c_opt .= " -Wunused-function -Wunused-parameter";
-       $sys_c_opt .= " -Wunused-variable -Wwrite-strings";
-       # Run-time flags
-       #EMK 20231109...Disabled several flags that are rejected by the new ICX
-       #compiler on Narwhal.
-       #$sys_c_opt .= " -check=conversions,stack,uninit";
-       $sys_c_opt .= " -fp-stack-check -fp-trap=common -fp-trap-all=common";
-       #$sys_c_opt .= " -ftrapuv";
+        # C flags
+        $sys_c_opt = "-g -O0 -Wall -Wcast-qual -Wcheck -Wdeprecated";
+        $sys_c_opt .= " -Wextra-tokens -Wformat";
+        $sys_c_opt .= " -Wformat-security -Wmissing-declarations";
+        $sys_c_opt .= " -Wmissing-prototypes -Wpointer-arith -Wremarks";
+        $sys_c_opt .= " -Wreturn-type -Wshadow -Wsign-compare";
+        $sys_c_opt .= " -Wstrict-prototypes -Wtrigraphs -Wuninitialized";
+        $sys_c_opt .= " -Wunused-function -Wunused-parameter";
+        $sys_c_opt .= " -Wunused-variable -Wwrite-strings";
+        $sys_c_opt .= " -fp-stack-check -fp-trap=common";
+        $sys_c_opt .= " -fp-trap-all=common";
+        $sys_c_opt .= " -ftrapv";
    }
    elsif($sys_arch eq "linux_pgi") {
       print "Optimization level $opt_lev is not defined for $sys_arch.\n";
@@ -215,26 +215,28 @@ if($opt_lev == -3) {
     }
 }
 elsif($opt_lev == -2) {
-   # Default flags for C.
-   $sys_c_opt = "-g";
-   if($sys_arch eq "linux_ifc"){
-       $sys_opt = "-g ";
-       $sys_opt .= 
-	   " -check bounds,format,output_conversion,pointers,stack,uninit";
-       $sys_opt .= " -fp-stack-check -ftrapuv";
+    $sys_opt = "-g -O0"; # Default flags for Fortran.
+    $sys_c_opt = "-g -O0";  # Default flags for C
+    if($sys_arch eq "linux_ifc"){
+        # Fortran flags
+        $sys_opt = "-g -O0 -warn alignments,declarations,externals,";
+        $sys_opt .= "general,truncated_source,unused,uncalled";
+        $sys_opt .= " -check bounds,format,output_conversion,pointers,";
+        $sys_opt .= "stack,uninit";
+        $sys_opt .= " -fp-stack-check -ftrapuv";
 
-       $sys_c_opt = "-g -Wall -Wcast-qual -Wcheck -Wdeprecated";
-       $sys_c_opt .= " -Wextra-tokens -Wformat";
-       $sys_c_opt .= " -Wformat-security -Wmissing-declarations";
-       $sys_c_opt .= " -Wmissing-prototypes -Wpointer-arith -Wremarks";
-       $sys_c_opt .= " -Wreturn-type -Wshadow -Wsign-compare";
-       $sys_c_opt .= " -Wstrict-prototypes -Wtrigraphs -Wuninitialized";
-       $sys_c_opt .= " -Wunused-function -Wunused-parameter";
-       $sys_c_opt .= " -Wunused-variable -Wwrite-strings";
-       # Run-time flags
-       $sys_c_opt .= " -check=conversions,stack,uninit";
-       $sys_c_opt .= " -fp-stack-check -fp-trap=common -fp-trap-all=common";
-       $sys_c_opt .= " -ftrapuv";
+        # C flags
+        $sys_c_opt = "-g -O0 -Wall -Wcast-qual -Wcheck -Wdeprecated";
+        $sys_c_opt .= " -Wextra-tokens -Wformat";
+        $sys_c_opt .= " -Wformat-security -Wmissing-declarations";
+        $sys_c_opt .= " -Wmissing-prototypes -Wpointer-arith -Wremarks";
+        $sys_c_opt .= " -Wreturn-type -Wshadow -Wsign-compare";
+        $sys_c_opt .= " -Wstrict-prototypes -Wtrigraphs -Wuninitialized";
+        $sys_c_opt .= " -Wunused-function -Wunused-parameter";
+        $sys_c_opt .= " -Wunused-variable -Wwrite-strings";
+        $sys_c_opt .= " -fp-stack-check -fp-trap=common";
+        $sys_c_opt .= " -fp-trap-all=common";
+        $sys_c_opt .= " -ftrapv";
    }
    elsif($sys_arch eq "linux_pgi") {
       print "Optimization level $opt_lev is not defined for $sys_arch.\n";
@@ -611,12 +613,12 @@ if($use_netcdf == 1) {
       $netcdf_deflate=1;
    }
 
-   print "NETCDF use deflate level? (1 to 9-yes, 0-no, default = 9): ";
+   print "NETCDF use deflate level? (1 to 9-yes, 0-no, default = 1): ";
    $netcdf_deflate_level=<stdin>;
    $netcdf_deflate_level=~s/ *#.*$//;
    chomp($netcdf_deflate_level);
    if($netcdf_deflate_level eq ""){
-      $netcdf_deflate_level=9;
+      $netcdf_deflate_level=1;
    }
 }
 
@@ -853,6 +855,46 @@ if($use_petsc == 1) {
    }
 }
 
+print "Enable USAF LIS75 SM DA codes? (1-yes, 0-no, default=0): ";
+$use_usaf_lis75_smda=<stdin>;
+$use_usaf_lis75_smda=~s/ *#.*$//;
+chomp($use_usaf_lis75_smda);
+if($use_usaf_lis75_smda eq ""){
+   $use_usaf_lis75_smda=0;
+}
+
+print "Use PIO? (1-yes, 0-no, default=0): ";
+$use_pio=<stdin>;
+$use_pio=~s/ *#.*$//;
+chomp($use_pio);
+if($use_pio eq ""){
+   $use_pio=0;
+}
+
+if($use_pio == 1) {
+   if(defined($ENV{LIS_PIO})){
+      $sys_pio_path = $ENV{LIS_PIO};
+      $inc = "/include/";
+      $lib = "/lib/";
+      $inc_pio=$sys_pio_path.$inc;
+      $lib_pio=$sys_pio_path.$lib;
+   }
+   elsif(defined($ENV{LIS_PIO_IN_ESMF}) && $ENV{LIS_PIO_IN_ESMF} eq "1"){
+      $inc_pio=$sys_esmfmod_path;
+      $lib_pio=$sys_esmflib_path;
+   }
+   else {
+      print "--------------ERROR---------------------\n";
+      print "Please specify the PIO path using\n";
+      print "the LIS_PIO variable or set the\n";
+      print "LIS_PIO_IN_ESMF variable if PIO is\n";
+      print "embedded in ESMF.\n";
+      print "Configuration exiting ....\n";
+      print "--------------ERROR---------------------\n";
+      exit 1;
+   }
+}
+
 if(defined($ENV{LIS_JPEG})){
    $libjpeg = "-L".$ENV{LIS_JPEG}."/lib"." -ljpeg";
 }
@@ -868,6 +910,11 @@ if ($ENV{ESMF_TRACE} eq '1') {
 # WRF_HYDRO does not prompt user
 if ($ENV{WRF_HYDRO} eq '1') {
    $use_wrf_hydro = 1;
+}
+
+# PARFLOW does not prompt user
+if ($ENV{PARFLOW} eq '1') {
+   $use_parflow = 1;
 }
 
 # MPDECOMP2 does not prompt user
@@ -1058,6 +1105,14 @@ elsif($use_lapack == 3){
    $lib_paths= $lib_paths." -L\$(LIB_LAPACK)";
 }
 
+if($use_pio == 1) {
+   $fflags77 = $fflags77." -I\$(INC_PIO)";
+   $fflags = $fflags." -I\$(INC_PIO)";
+   $ldflags = $ldflags." -L\$(LIB_PIO) -lpioc";
+   $lib_flags= $lib_flags." -lpioc";
+   $lib_paths= $lib_paths." -L\$(LIB_PIO)";
+}
+
 if($use_esmf_trace == 1){
    $fflags77 = $fflags77." -DESMF_TRACE";
    $fflags = $fflags." -DESMF_TRACE";
@@ -1083,6 +1138,11 @@ if($use_esmf_trace == 1){
 if ($use_wrf_hydro == 1) {
    $fflags77 = $fflags77." -DWRF_HYDRO";
    $fflags = $fflags." -DWRF_HYDRO";
+}
+
+if ($use_parflow == 1) {
+   $fflags77 = $fflags77." -DPARFLOW";
+   $fflags = $fflags." -DPARFLOW";
 }
 
 if ($use_mpdecomp2 == 1) {
@@ -1146,6 +1206,8 @@ printf conf_file "%s%s\n","LIB_CMEM        = $lib_cmem";
 printf conf_file "%s%s\n","LIB_LAPACK      = $lib_lapack";
 printf conf_file "%s%s\n","INC_PETSC       = $inc_petsc";
 printf conf_file "%s%s\n","LIB_PETSC       = $lib_petsc";
+printf conf_file "%s%s\n","INC_PIO         = $inc_pio";
+printf conf_file "%s%s\n","LIB_PIO         = $lib_pio";
 printf conf_file "%s%s\n","CFLAGS          = $cflags";
 printf conf_file "%s%s\n","FFLAGS77        = $fflags77";
 printf conf_file "%s%s\n","FFLAGS          = $fflags";
@@ -1235,6 +1297,13 @@ else{
 
 printf misc_file "%s\n","#undef INC_WATER_PTS";
 printf misc_file "%s\n","#undef COUPLED";
+
+if ($use_usaf_lis75_smda == 1) {
+    printf misc_file "%s\n","#define USAF_LIS75_SMDA ";
+} else {
+    printf misc_file "%s\n","#undef USAF_LIS75_SMDA ";
+}
+
 close(misc_file);
 
 open(netcdf_file,">LIS_NetCDF_inc.h");
