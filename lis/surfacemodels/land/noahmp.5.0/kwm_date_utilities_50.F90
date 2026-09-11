@@ -63,6 +63,8 @@ contains
     logical :: punctuated
     logical :: idtdy, idthr, idtmin, idtsec, idtfrac
 
+    external :: abort
+
 !  Assign the number of days in a months
 
     mday( 1) = 31
@@ -442,7 +444,6 @@ contains
 ! ndate, odate: local values of newdate and olddate
     character(len=24) :: ndate, odate
 
-    character (len=24) :: tdate
     integer :: olen, nlen
     integer :: yrnew, monew, dynew, hrnew, minew, scnew, frnew
     integer :: yrold, moold, dyold, hrold, miold, scold, frold
