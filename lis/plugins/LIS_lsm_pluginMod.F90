@@ -244,6 +244,16 @@ subroutine LIS_lsm_plugin
    use ac72_lsmMod, only : ac72_ini
 #endif
 
+   external :: registerlsminit
+   external :: registerlsmsetup
+   external :: registerlsmf2t
+   external :: registerlsmrun
+   external :: registerlsmrestart
+   external :: registerlsmdynsetup
+   external :: registerlsmwrst
+   external :: registerlsmfinalize
+   external :: registerlsmreset
+
 #if ( defined SM_LSM_TEMPLATE )
    external template_main
    external template_setup
