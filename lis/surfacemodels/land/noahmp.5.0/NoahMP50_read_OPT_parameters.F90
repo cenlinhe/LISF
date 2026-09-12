@@ -31,6 +31,8 @@ subroutine NoahMP50_read_OPT_parameters()
   integer           :: col, row
   real, allocatable :: placeholder(:,:)
 
+  external :: NoahMP50_read_OPT_param
+
   mtype = LIS_rc%lsm_index
 
   do n=1,LIS_rc%nnest
